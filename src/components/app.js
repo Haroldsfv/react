@@ -4,9 +4,8 @@ import Maestro from "./pages/Maestro";
 import Segunda from './pages/Segunda';
 import shook from "./pages/hooks";
 
-export default function App(){
-    return(
-       <BrowserRouter>
+const App=()=>(
+   <BrowserRouter>
           <Routes>
 
     <Route exact path="/ruta1" element={<Maestro/>}></Route>
@@ -14,6 +13,6 @@ export default function App(){
     <Route exact path="/*" element={shook}></Route>
           </Routes>
        </BrowserRouter>
-    )
 
-}
+)
+export default App

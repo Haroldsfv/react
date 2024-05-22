@@ -6,9 +6,7 @@ import Iteracion from "../Itinerante"
 import Addb from "../boton";
 
 export default class Maestro extends React.Component{
-    constructor(props){
-        super(props)
-        this.state={
+    state = {
             data:[{
                 "id":1,
                 "nombre":"Goku",
@@ -43,12 +41,8 @@ export default class Maestro extends React.Component{
                 "descripcion": "Gold",
                 "img": 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDOjKnISGnhrj12pyvGcr6eFFlS00EslWcKoJZBJsugA&s',
                 "color":"purple"
-              }
-        
-        ]
-            
+              }]   
         }
-}
 render(){
     return(
         <div>
