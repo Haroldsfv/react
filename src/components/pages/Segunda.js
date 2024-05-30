@@ -1,46 +1,36 @@
 import React from "react";
+import Formulario from "../Formulario"
+import Card from "../Card";
 
-export default class Segunda extends React.Component{
-state={}
-handleSummit=e=>{
-  e.preventDefault()
-  console.log(this.state)
+export default class Segunda  extends React.Component{
+  state={
+    form:{
+      nombre:''
+      
+   
 }
-handleChange=e=>{
-  this.setState({[e.target.name]:e.target.value})
-}
-
-render (){
-  return(
-    <div>
-      <form onSubmit={this.handleSummit}>
-        <input
-          className="Nombre"
-          type="text"
-          placeholder="Nombre"
-          name="nombre"
-          onChange={this.handleChange}
-          value={this.state.nombre}
-        />
-        <br></br>
-        <br></br>
-        <input
-        className="Descripción"
-        type="text"
-        placeholder="Descripción"
-        name="descripción"
-        onChange={this.handleChange}
-        value={this.state.descripcion}
-        />
-        <br></br>
-        <button type="submit">
-       Enviar formulario
-       </button>
-      </form>
-    </div>
-  )
-}
-
+  }
+  handleChange=e=>{
+    this.setState({
+      form:{
+        ...this.state.form,
+        [e.target.name]:e.target.value}
+    })
+  }
+  render(){
+    return(
+      <div>
+           <Card
+           {...this.state.form}
+           
+           />
+      <Formulario
+      onChange={this.handleChange}
+      form={this.state.form}
+      />
+      </div>
+    )
+  }
 }
 
 //   handleClick=()=>(
